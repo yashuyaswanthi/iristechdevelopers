@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Colorful and Vibrant Temperature Converter</title>
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  color: #333;
+}
+
+input {
+  width: 100px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+button {
+  width: 100px;
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+.result {
+  font-weight: bold;
+  color: #000;
+}
+
+.temperature-converter {
+  margin: 0 auto;
+  width: 400px;
+}
+
+.temperature-converter .unit {
+  margin-left: 10px;
+}
+</style>
+</head>
+<body>
+<h1>Colorful and Vibrant Temperature Converter</h1>
+<div class="temperature-converter">
+  <input id="temperature" type="number" placeholder="Temperature" />
+  <select id="unit">
+    <option value="fahrenheit">Fahrenheit</option>
+    <option value="celsius">Celsius</option>
+    <option value="kelvin">Kelvin</option>
+  </select>
+  <button onclick="convert()">Convert</button>
+  <div class="result">
+    <span id="result"></span>
+  </div>
+</div>
+
+<script>
+function convert() {
+  var temperature = document.getElementById("temperature").value;
+  var unit = document.getElementById("unit").value;
+  var result;
+
+  switch (unit) {
+    case "fahrenheit":
+      result = (temperature - 32) / 1.8;
+      break;
+    case "celsius":
+      result = temperature * 1.8 + 32;
+      break;
+    case "kelvin":
+      result = temperature + 273.15;
+      break;
+  }
+
+  document.getElementById("result").innerHTML = result;
+}
+</script>
+</body>
+</html>
